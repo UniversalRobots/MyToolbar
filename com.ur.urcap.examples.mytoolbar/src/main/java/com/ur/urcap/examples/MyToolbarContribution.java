@@ -56,21 +56,21 @@ class MyToolbarContribution implements SwingToolbarContribution {
 	private Box createInfo() {
 		Box infoBox = Box.createVerticalBox();
 		infoBox.setAlignmentX(Component.CENTER_ALIGNMENT);
-        JLabel pane1 = new JLabel();
-        pane1.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+		JLabel pane1 = new JLabel();
+		pane1.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 		pane1.setText("<HTML>This is a sample URCap Toolbar contribution. Feel free to use this as an example for creating new contributions.</HTML>");
-        pane1.setBackground(infoBox.getBackground());
-        infoBox.add(pane1);
+		pane1.setBackground(infoBox.getBackground());
+		infoBox.add(pane1);
 
-        JLabel pane2 = new JLabel();
-        Locale locale = context.getAPIProvider().getSystemAPI().getSystemSettings().getLocalization().getLocale();
-        pane2.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        pane2.setText("<HTML>Currently, the robot is configured to use the Locale: " + locale.getDisplayName() + "</HTML>");
-        infoBox.add(pane2);
+		JLabel pane2 = new JLabel();
+		Locale locale = context.getAPIProvider().getSystemAPI().getSystemSettings().getLocalization().getLocale();
+		pane2.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+		pane2.setText("<HTML>Currently, the robot is configured to use the Locale: " + locale.getDisplayName() + "</HTML>");
+		infoBox.add(pane2);
 
-        demoToolStatus = new JLabel();
+		demoToolStatus = new JLabel();
 		demoToolStatus.setText("<HTML>" + get3rdPartyStatus() +"</HTML>");
-        demoToolStatus.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+		demoToolStatus.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 		infoBox.add(demoToolStatus);
 		return infoBox;
 	}
@@ -80,8 +80,8 @@ class MyToolbarContribution implements SwingToolbarContribution {
 	}
 
 	private String get3rdPartyStatus() {
-        Date now = new Date();
-        int number = new Random().nextInt(10) + 20;
-        return  String.format("Tool status reading: %d, read at %tF %tT.", number, now, now);
-    }
+		Date now = new Date();
+		int number = new Random().nextInt(10) + 20;
+		return  String.format("Tool status reading: %d, read at %tF %tT.", number, now, now);
+	}
 }
